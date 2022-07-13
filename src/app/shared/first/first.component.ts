@@ -21,9 +21,9 @@ enum Genre {
 export class FirstComponent {
   constructor() {}
 
-  name = 'A Book';
+  name = 'The Book';
   description =
-    'A simple book, that, as any other book, contains pages. The contents of those pages shall remain our secret.';
+    'A simple book, that, as any other book, contains pages. The contents of those pages shall remain unknown to all but those who acquire The Book.';
   price = 10.99;
   isAvailable = true;
   category = Category.Entertainment;
