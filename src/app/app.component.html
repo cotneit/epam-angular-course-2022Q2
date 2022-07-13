@@ -1,5 +1,18 @@
-<div class="flex flex-col items-center pt-3">
-  <app-first></app-first>
+<div class="flex flex-col items-center space-y-3 pt-3">
+  <div>
+    <h2 class="mb-2 text-center text-2xl font-semibold tracking-wider">Catalog</h2>
+    <app-product-list></app-product-list>
+  </div>
 
-  <app-product-list class="mt-5"></app-product-list>
+  <div *ngIf="cartListShown$ | async">
+    <h2 class="mb-2 text-center text-2xl font-semibold tracking-wider">Cart</h2>
+    <app-cart-list></app-cart-list>
+  </div>
+
+  <div>
+    <h2 class="mb-2 text-center text-2xl font-semibold tracking-wider">
+      First component!
+    </h2>
+    <app-first></app-first>
+  </div>
 </div>

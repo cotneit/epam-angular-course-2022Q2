@@ -8,10 +8,16 @@ import { ProductModel } from '../../models/product.model';
 })
 export class ProductComponent {
   @Input() product!: ProductModel;
+  @Input() context: 'product-list' | 'cart' = 'product-list';
   @Output() productAddToCart = new EventEmitter<ProductModel>();
+  @Output() productRemoveFromCart = new EventEmitter<ProductModel>();
 
   onAddToCart() {
     this.productAddToCart.emit(this.product);
     console.log(`Added product ${this.product.name} to cart.`);
+  }
+
+  onRemoveFromCart() {
+    this.productRemoveFromCart.emit(this.product);
   }
 }
