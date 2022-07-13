@@ -1,0 +1,8 @@
+<div class="space-y-3">
+  <app-product
+    *ngFor="let product of cartProducts$ | async; trackBy: trackByProduct"
+    [product]="product"
+    [context]="'cart'"
+    (productRemoveFromCart)="onProductRemoveFromCart(product)"
+  ></app-product>
+</div>

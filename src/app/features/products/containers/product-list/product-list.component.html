@@ -1,0 +1,19 @@
+<div class="space-y-3">
+  <div
+    *ngFor="let product of products$ | async; trackBy: trackByProduct"
+    class="relative shadow-md"
+  >
+    <app-product
+      [product]="product"
+      (productAddToCart)="onProductAddToCart(product)"
+    ></app-product>
+    <div
+      *ngIf="isProductInCart(product)"
+      class="absolute top-0 flex h-full w-full items-center justify-center bg-slate-500/80"
+    >
+      <span class="-rotate-12 text-4xl font-semibold text-lime-400"
+        >Already in cart!</span
+      >
+    </div>
+  </div>
+</div>
