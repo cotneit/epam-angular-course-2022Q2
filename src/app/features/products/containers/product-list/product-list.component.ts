@@ -18,8 +18,8 @@ export class ProductListComponent implements OnDestroy {
   constructor(private productService: ProductService, private cartService: CartService) {
     this.cartService.cartProducts$
       .pipe(
-        map((cartProducts) => cartProducts.map((product) => product.id)),
-        tap((cartProductIDs) => (this.productIDsInCart = new Set(cartProductIDs))),
+        map((cartProducts: ProductModel[]) => cartProducts.map((product) => product.id)),
+        tap((cartProductIDs: number[]) => (this.productIDsInCart = new Set(cartProductIDs))),
         takeUntil(this.destroy$$),
       )
       .subscribe();

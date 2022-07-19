@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { CartService } from './features/cart/services/cart.service';
+import { ProductModel } from './features/products/models/product.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { CartService } from './features/cart/services/cart.service';
 export class AppComponent {
   title = 'shop';
   cartListShown$ = this.cartService.cartProducts$.pipe(
-    map((products) => Boolean(products.length)),
+    map((products: ProductModel[]) => Boolean(products.length)),
   );
 
   constructor(private cartService: CartService) {}
