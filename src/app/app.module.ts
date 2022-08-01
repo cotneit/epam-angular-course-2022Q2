@@ -14,3 +14,4 @@ import { FirstModule } from './shared/first/first.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+// Все хорошо
