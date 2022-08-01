@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 enum Category {
   Entertainment = 'Entertainment',
@@ -17,6 +17,7 @@ enum Genre {
   selector: 'app-first',
   templateUrl: './first.component.html',
   styleUrls: ['./first.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FirstComponent {
   constructor() {}
