@@ -5,3 +5,7 @@ export interface ProductModel {
   price: number;
   available: boolean;
 }
+
+export interface CartProductModel extends ProductModel {
+  cartAmount: number;
+}

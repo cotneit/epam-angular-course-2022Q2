@@ -1,8 +1,24 @@
 <div class="space-y-3">
-  <app-product
+  <div class="bg-white p-3 text-center">
+    <p
+      *ngIf="{
+        quantity: cartTotalQuantity$ | async,
+        cost: cartTotalCost$ | async
+      } as props"
+    >
+      <span class="font-semibold">{{ props.quantity }}</span>
+      {{ 'item' + (props.quantity === 1 ? '' : 's') }}
+      for a total of
+      <span class="font-semibold">{{ props.cost | currency }}</span>
+    </p>
+  </div>
+
+  <app-cart-product
     *ngFor="let product of cartProducts$ | async; trackBy: trackByProduct"
     [product]="product"
-    [context]="'cart'"
     (productRemoveFromCart)="onProductRemoveFromCart(product)"
-  ></app-product>
+    (productQuantityDecrease)="onProductQuantityDecrease(product)"
+    (productQuantityIncrease)="onProductQuantityIncrease(product)"
+    [appHighlight]="'bg-purple-300/30'"
+  ></app-cart-product>
 </div>

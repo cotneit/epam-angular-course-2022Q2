@@ -14,7 +14,22 @@ const products: ProductModel[] = [
     id: 2,
     name: 'Ducky One 2',
     description: 'Best in class mechanical keyboard.',
+    available: false,
+    price: 229.99,
+  },
+  {
+    id: 3,
+    name: 'Ducky One 3',
+    description: 'Best in class mechanical keyboard that got even better.',
     available: true,
+    price: 229.99,
+  },
+  {
+    id: 4,
+    name: 'Raspberry Pi 4 Model B 4G',
+    description:
+      'Your tiny, dual-display, desktop computer\n…and robot brains, smart home hub, media centre, networked AI core, factory controller, and much more',
+    available: false,
     price: 229.99,
   },
 ];
